@@ -23,7 +23,16 @@ import urllib.parse
 
 
 # ── Storage ───────────────────────────────────────────────────────
-APP_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+# On Render.com the working directory is writable but ephemeral.
+# We use /tmp which is always writable on any Linux server including Render.
+# For a permanent solution, upgrade to Render's persistent disk ($1/month).
+if os.path.exists("/tmp"):
+    # Running on Linux server (Render, Railway, etc.)
+    APP_DIR = "/tmp/wealthbuilder_data"
+else:
+    # Running locally on Windows/Mac
+    APP_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+
 USERS_FILE = os.path.join(APP_DIR, "users.json")
 BOND_DB = os.path.join(APP_DIR, "bond_rates.db")
 os.makedirs(APP_DIR, exist_ok=True)
