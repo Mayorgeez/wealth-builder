@@ -55,7 +55,7 @@ body {
 
 .hidden { display: none !important; }
 
-/* ── Login screen ──────────────────────────────────────────────── */
+/*  Login screen  */
 #login-screen {
   min-height: 100vh;
   display: flex;
@@ -190,7 +190,7 @@ input:focus, select:focus {
 
 .btn-primary:hover { background: var(--accent); }
 
-/* ── App shell ─────────────────────────────────────────────────── */
+/*  App shell  */
 #app-screen { min-height: 100vh; }
 
 .topbar {
@@ -251,7 +251,7 @@ input:focus, select:focus {
 
 .icon-btn:hover { opacity: 0.85; }
 
-/* ── Main content ──────────────────────────────────────────────── */
+/*  Main content  */
 .content {
   max-width: 760px;
   margin: 0 auto;
@@ -374,12 +374,12 @@ input:focus, select:focus {
 }
 .autocomplete-list div:hover { background: var(--sel-bg); color: var(--green); }
 
-/* ── Filters ──────────────────────────────────────────────────── */
+/*  Filters  */
 .filter-row { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
 .filter-row label { font-size: 11px; color: var(--muted); }
 .filter-row select { width: auto; min-width: 110px; padding: 6px 9px; font-size: 12px; }
 
-/* ── Log entries ──────────────────────────────────────────────── */
+/*  Log entries  */
 .log-empty { color: var(--muted); font-size: 13px; padding: 24px 0; text-align: center; }
 
 .entry-row { display: flex; gap: 0; margin-bottom: 6px; }
@@ -418,7 +418,7 @@ input:focus, select:focus {
 }
 .entry-delete:hover { background: #E8D4A0; }
 
-/* ── Year-end summary ─────────────────────────────────────────── */
+/*  Year-end summary  */
 .yearend-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -436,7 +436,7 @@ input:focus, select:focus {
 .yearend-card .value { font-size: 19px; font-weight: 700; margin-top: 4px; }
 .yearend-card .sub { font-size: 9px; color: var(--muted); margin-top: 2px; }
 
-/* ── Settings ─────────────────────────────────────────────────── */
+/*  Settings  */
 .settings-msg { font-size: 12px; margin-top: 8px; min-height: 16px; }
 .settings-msg.ok { color: var(--green); }
 .settings-msg.err { color: var(--red); }
@@ -451,7 +451,7 @@ input:focus, select:focus {
 .bond-history-row:last-child { border-bottom: none; }
 .bond-history-rate { color: var(--accent); font-weight: 700; }
 
-/* ── Toast ────────────────────────────────────────────────────── */
+/*  Toast  */
 #toast {
   position: fixed;
   bottom: 24px;
@@ -471,7 +471,7 @@ input:focus, select:focus {
 }
 #toast.show { opacity: 1; transform: translateX(-50%) translateY(-6px); }
 
-/* ── Confirm modal ────────────────────────────────────────────── */
+/*  Confirm modal  */
 .modal-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.6);
@@ -499,7 +499,7 @@ input:focus, select:focus {
 .modal-btn-cancel { background: var(--card2); color: var(--muted); }
 .modal-btn-confirm { background: var(--red); color: #fff; }
 
-/* ── Responsive ───────────────────────────────────────────────── */
+/*  Responsive  */
 @media (max-width: 540px) {
   .metrics-grid { grid-template-columns: 1fr 1fr; }
   .form-row.cols-2 { grid-template-columns: 1fr; }
@@ -510,7 +510,7 @@ input:focus, select:focus {
 </head>
 <body data-theme="dark">
 
-<!-- ═══════════════ LOGIN SCREEN ═══════════════ -->
+<!--  LOGIN SCREEN  -->
 <div id="login-screen">
   <div class="login-card">
     <div class="login-header">
@@ -540,7 +540,7 @@ input:focus, select:focus {
   </div>
 </div>
 
-<!-- ═══════════════ MAIN APP SCREEN ═══════════════ -->
+<!--  MAIN APP SCREEN  -->
 <div id="app-screen" class="hidden">
   <div class="topbar">
     <div class="topbar-inner">
@@ -552,27 +552,27 @@ input:focus, select:focus {
         </div>
       </div>
       <div class="topbar-right">
-        <button class="icon-btn settings-btn" id="settings-btn" onclick="openSettings()">⚙ Settings</button>
-        <button class="icon-btn theme-btn" id="theme-btn" onclick="toggleTheme()">☀ Light</button>
-        <button class="icon-btn logout-btn" onclick="logout()">⏻ Logout</button>
+        <button class="icon-btn settings-btn" id="settings-btn" onclick="openSettings()"> Settings</button>
+        <button class="icon-btn theme-btn" id="theme-btn" onclick="toggleTheme()"> Light</button>
+        <button class="icon-btn logout-btn" onclick="logout()"> Logout</button>
       </div>
     </div>
   </div>
 
   <div class="content">
 
-    <!-- ── Dashboard view ── -->
+    <!--  Dashboard view  -->
     <div id="dashboard-view">
 
       <div class="metrics-grid">
         <div class="metric-card"><div class="bar" style="background:var(--green)"></div>
-          <div class="inner"><div class="label">Total Invested</div><div class="value" id="m-total" style="color:var(--green)">₦0</div></div></div>
+          <div class="inner"><div class="label">Total Invested</div><div class="value" id="m-total" style="color:var(--green)">0</div></div></div>
         <div class="metric-card"><div class="bar" style="background:var(--green)"></div>
-          <div class="inner"><div class="label">FGN Bond</div><div class="value" id="m-bond" style="color:var(--green)">₦0</div></div></div>
+          <div class="inner"><div class="label">FGN Bond</div><div class="value" id="m-bond" style="color:var(--green)">0</div></div></div>
         <div class="metric-card"><div class="bar" style="background:var(--blue)"></div>
-          <div class="inner"><div class="label">Equity Funds</div><div class="value" id="m-equity" style="color:var(--blue)">₦0</div></div></div>
+          <div class="inner"><div class="label">Equity Funds</div><div class="value" id="m-equity" style="color:var(--blue)">0</div></div></div>
         <div class="metric-card"><div class="bar" style="background:var(--amber)"></div>
-          <div class="inner"><div class="label">Stocks</div><div class="value" id="m-stock" style="color:var(--amber)">₦0</div></div></div>
+          <div class="inner"><div class="label">Stocks</div><div class="value" id="m-stock" style="color:var(--amber)">0</div></div></div>
       </div>
 
       <!-- Log Investment -->
@@ -607,13 +607,13 @@ input:focus, select:focus {
 
         <div class="form-row cols-1">
           <div>
-            <label class="field-label">Amount (₦) *</label>
+            <label class="field-label">Amount () *</label>
             <input type="number" id="f-amount" placeholder="0.00">
           </div>
         </div>
 
         <div class="btn-row">
-          <button class="btn-save" onclick="addEntry()">✓ Save Entry</button>
+          <button class="btn-save" onclick="addEntry()"> Save Entry</button>
           <button class="btn-clear" onclick="clearForm()">Clear</button>
           <span class="live-status" id="live-status"></span>
         </div>
@@ -627,7 +627,7 @@ input:focus, select:focus {
           <select id="filter-year" onchange="renderLog()"><option value="All Years">All Years</option></select>
           <label>Month:</label>
           <select id="filter-month" onchange="renderLog()"><option value="All Months">All Months</option></select>
-          <button class="btn-fetch ghost" onclick="refreshAllPrices()" style="margin-left:auto;">⟳ Refresh Prices</button>
+          <button class="btn-fetch ghost" onclick="refreshAllPrices()" style="margin-left:auto;"> Refresh Prices</button>
         </div>
         <div id="log-container"></div>
       </div>
@@ -637,19 +637,19 @@ input:focus, select:focus {
         <div class="section-title">Year-End Summary</div>
         <div class="yearend-grid">
           <div class="yearend-card"><div class="bar" style="background:var(--green)"></div>
-            <div class="inner"><div class="label">Total Invested</div><div class="value" id="ye-total" style="color:var(--green)">₦0</div><div class="sub" id="ye-sub">0 months logged</div></div></div>
+            <div class="inner"><div class="label">Total Invested</div><div class="value" id="ye-total" style="color:var(--green)">0</div><div class="sub" id="ye-sub">0 months logged</div></div></div>
           <div class="yearend-card"><div class="bar" style="background:var(--green)"></div>
-            <div class="inner"><div class="label">Profit / Loss (Stocks)</div><div class="value" id="ye-pl">₦0</div><div class="sub" id="ye-pl-sub">No stock entries yet</div></div></div>
+            <div class="inner"><div class="label">Profit / Loss (Stocks)</div><div class="value" id="ye-pl">0</div><div class="sub" id="ye-pl-sub">No stock entries yet</div></div></div>
           <div class="yearend-card"><div class="bar" style="background:var(--blue)"></div>
             <div class="inner"><div class="label">Bond Allocation</div><div class="value" id="ye-bond" style="color:var(--blue)">0%</div></div></div>
           <div class="yearend-card"><div class="bar" style="background:var(--amber)"></div>
-            <div class="inner"><div class="label">Largest Entry</div><div class="value" id="ye-large" style="color:var(--amber)">₦0</div></div></div>
+            <div class="inner"><div class="label">Largest Entry</div><div class="value" id="ye-large" style="color:var(--amber)">0</div></div></div>
         </div>
       </div>
 
     </div>
 
-    <!-- ── Settings view ── -->
+    <!--  Settings view  -->
     <div id="settings-view" class="hidden">
 
       <div class="section">
@@ -663,7 +663,7 @@ input:focus, select:focus {
       </div>
 
       <div class="section">
-        <div class="section-title">Security — Change Password</div>
+        <div class="section-title">Security  Change Password</div>
         <label class="field-label">Old Password</label>
         <input type="password" id="set-old-pw">
         <label class="field-label">New Password</label>
